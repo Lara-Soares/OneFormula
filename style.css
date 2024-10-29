@@ -1,0 +1,234 @@
+/* Adicionar aqui toda a estilização criada para sua aplicação. */
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+body{
+
+    margin: 0;
+    padding: 0;
+    font-family: Russo One;
+    background-color: #A20000;
+}
+
+:root{
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-footer: 65px;
+}
+
+/* HEADER */
+
+.header{
+    height: var(--tamanho-header);
+    border-bottom: 2px solid #A20000;
+}
+
+.container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.header .container{
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+.barra {
+    font-weight: 500;
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+}
+
+.titulo {
+    color: white;
+    width: fit-content;
+    font-weight: 400;
+
+}
+
+/* BANNER */
+
+.banner {
+    height: var(--tamanho-banner);
+    color: white;
+    background-image: url('https://autodromodeinterlagos.com.br/wp-content/uploads/2022/11/LucaBassani_F1_GPSP_2022_3737_red-1024x662.jpg');
+    background-size: cover;
+}
+
+.banner .container{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.banner .container p {
+    width: 70%;
+    font-size: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .container span {
+    font-weight: 800;
+}
+
+/* SOCIAL */
+
+.social {
+    background-color: #c02929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.social .container .boxes {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 30px 0;
+    align-items: center;
+    color: white;
+}
+
+.box {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.box img {
+    width: 170px;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #A20000;
+    height: var(--tamanho-footer);
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+}
+
+.footer .container {
+    justify-content: center;
+    align-items: center;
+}
+
+.version {
+    font-size: 12px;
+}
+
+/*LOGIN*/
+
+.login {
+    height: var(--tamanho-login);
+    color: white;
+    background-image: url('../assets/imgs/bg-jelly-fish-para_outras_pags.png');
+    
+}
+
+   
+.container{
+    align-items:center ;
+    justify-content: center;
+    
+
+}
+.card{
+    background-color:  #e5e5e5;
+    color: HotPink	; 
+    font-family: 'Barlow', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80vh;
+    margin-bottom: 100px;
+    margin-top: 100px;
+
+}
+
+.card h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+
+.formulario{
+    background-color:  #e5e5e5; 
+    text-align: center;
+
+}
+ .campo {
+        display: flex;
+        font-size: 15px ;
+        font-weight: 800;
+        flex-direction: column;
+        
+ }
+ span {
+    text-align: left;
+    margin-left: 52px;
+    margin-top: 10px;
+
+}
+ input {
+    border-radius: 5px;
+    border-color: aqua;
+    border-bottom: 2px solid #32b9cd;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 80%;
+    height: 25px;
+    text-align: center;
+}
+
+
+.botao{
+        background-color: Crimson; 
+        color: white;
+        padding: 10px ;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;   
+        width: 30%; 
+        margin: 10px;
+
+} 
+/*CADASTRO*/
+.card-cadastro{
+    background-color:  #e5e5e5;
+    color: HotPink	; 
+    font-family: 'Barlow', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80vh;
+    margin: 10px;
+
+}
+.card-cadastro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+
+
+
