@@ -28,10 +28,18 @@ body{
     display: flex;
     width: 80%;
     margin: auto;
+    align-items: center;
+}
+.container .logo{
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+
+
 }
 
 .header .container{
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     height: 100%;
 }
@@ -39,6 +47,7 @@ body{
 .header a{
     text-decoration: none;
     color: white;
+   
 }
 
 .barra {
@@ -258,7 +267,6 @@ body{
  }
  span {
     text-align: left;
-    margin-left: 50px;
     margin-top: 10px;
 
 }
