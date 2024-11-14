@@ -35,7 +35,6 @@ body{
     display: flex;
     align-items: center;
 
-
 }
 
 .header .container{
@@ -73,17 +72,17 @@ body{
 }
 
 
-/* BANNER */
+/* BANNER PRINCIPAL */
 
 .banner {
     height: var(--tamanho-banner);
-    color: white;
-    background-image: url('fotos/merc2.jpg');
+    background-image: url('fotos/F1\ 2023\ Winners\ La\ La\ La「\ F1\ Edit\ 」.gif');
     background-size: cover;
+    background-position: center;
 }
 
 .banner .container{
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
     height: 100%;
 }
@@ -93,6 +92,7 @@ body{
     font-size: 70px;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .banner .container span {
@@ -133,16 +133,21 @@ body{
 /*  Barra de separação  */
 
 .header2{
-    height: 100px;
+    height: px;
     border-bottom: 2px solid #A20000;
+    background-image: url('https://i.pinimg.com/originals/b1/d0/19/b1d019e9c4352865d2963efac66d0c87.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+   
+
 }
 .header2 a{
     display: flex;
     text-decoration: none;
     color: white;
-    width: 50%;
     font-size: 50px;
-    justify-content:flex-end;  
+    justify-content:center;  
 }
 .header2 p{
     color: white;
@@ -224,6 +229,7 @@ body{
     color: #e5e5e5;
     background-image: url('fotos/tifosi.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
    
@@ -294,7 +300,7 @@ body{
         margin: 10px;
 
 } 
-/*  CADASTRO  */
+ /* CADASTRO  */
 .cadastro {
     height: var(--tamanho-login);
     color: #e5e5e5;
@@ -316,6 +322,28 @@ body{
     text-align: center;
     margin-bottom: 20px;
   }
+
+  /* BANNER NOTÍCIA */
+  .banner2 {
+    height: var(--tamanho-banner);
+    background-image: url('https://i.pinimg.com/originals/85/02/20/8502209caddc3417e687382704c59e1c.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner2 .container p {
+    width: 70%;
+    font-size: 70px;
+    justify-content: center;
+    align-items: center;
+}
+.banner2 .container{
+    justify-content:flex-start;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+
 
 
 
