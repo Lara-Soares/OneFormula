@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+body{
+
+    margin: 0;
+    padding: 0;
+    font-family: Russo One;
+    background-color: #A20000;
+}
+
+:root{
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(90vh - var(--tamanho-header) + var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-footer: 65px;
+}
+
+/* HEADER */
+
+.header{
+    height: var(--tamanho-header);
+    border-bottom: 2px solid #A20000;
+}
+
+.container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+}
+.container .logo{
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+
+}
+
+.header .container{
+    justify-content:space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+   
+}
+
+.barra {
+    font-weight: 500;
+    
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+
+}
+
+.titulo {
+    color: white;
+    width: fit-content;
+    font-weight: 400;
+
+}
+
+
+/* BANNER PRINCIPAL */
+
+.banner {
+    height: var(--tamanho-banner);
+    background-image: url("../fotos/F1\ 2023\ Winners\ La\ La\ La「\ F1\ Edit\ 」.gif");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .container{
+    justify-content:flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.banner .container p {
+    width: 70%;
+    font-size: 70px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.banner .container span {
+    font-weight: 800;
+}
+
+/*  PRIMEIRA PARTE  */
+
+.social {
+    background-color: #c02929;
+    display: flex;
+    justify-content: center;
+}
+
+.social .container .boxes {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 30px 0;
+    align-items: center;
+    color: white;
+}
+
+.social .container span{
+    color: black
+
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*  Barra de separação  */
+
+.header2{
+    height: px;
+    border-bottom: 2px solid #A20000;
+    background-image: url('https://i.pinimg.com/originals/b1/d0/19/b1d019e9c4352865d2963efac66d0c87.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+   
+
+}
+.header2 a{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    justify-content:center;  
+}
+.header2 p{
+    color: white;
+    display: flex;
+    justify-content:center ;
+}
+
+/*  PARTE PNEUS */
+.social2 {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+
+}
+
+.social2 .container2  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 30px 0;
+    color: white;
+}
+
+
+.box2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align:center;
+    color: black;
+}
+.box2 span {
+   color:#A20000;
+}
+.box2 img{
+    width: 200px;
+}
+
+.box3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: black;   
+}
+.box3 span{
+    color: #A20000;
+}
+.box3 img{
+    width: 200px;
+}
+
+
+
+/* FOOTER */
+
+.footer {
+    background-color: #A20000;
+    height: var(--tamanho-footer);
+    color: #fff;
+    display: flex;
+    font-size: 10px;
+}
+
+.footer .container {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*  LOGIN  */
+
+.login {
+    height: var(--tamanho-login);
+    color: #e5e5e5;
+    background-image: url('../fotos/tifosi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+   
+.container{
+    align-items:center ;
+    justify-content: center;
+    
+
+}
+.card{
+    background-color:  #e5e5e5;
+    color: #A20000	; 
+    font-family: Russo One;
+    padding: 20px;
+    border-radius: 50px;
+    width: 60vh;
+    margin-bottom: 90px;
+    margin-top: 90px;
+    border-style: dotted;
+
+   
+}
+
+.card h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+
+.formulario{
+    background-color:  #e5e5e5; 
+    text-align: center;
+
+}
+ .campo {
+        display: flex;
+        font-size: 15px ;
+        font-weight: 800;
+        flex-direction: column;
+        
+ }
+ span {
+    text-align: left;
+    margin-top: 10px;
+
+}
+ input {
+    border-radius: 5px;
+    border-color: #A20000;
+    border-bottom: 2px solid #A20000;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 80%;
+    height: 25px;
+    text-align: center;
+    background-color: #e5e5e5;
+}
+
+
+.botao{
+        background-color: #A20000; 
+        color: #e5e5e5;
+        padding: 10px ;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;   
+        width: 30%; 
+        margin: 10px;
+
+} 
+ /* CADASTRO  */
+.cadastro {
+    height: var(--tamanho-login);
+    color: #e5e5e5;
+    background-image: url('../fotos/fridayspa-francorchamps9-scaled-1920x1080.jpg');
+    background-repeat: no-repeat;
+}
+.card-cadastro{
+    background-color:  #e5e5e5;
+    color: #A20000; 
+    font-family: Russo One;
+    padding: 20px;
+    border-radius: 50px;
+    width: 80vh;
+    margin: 10px;
+    border-style: dotted;
+
+}
+.card-cadastro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* BANNER NOTÍCIA */
+  .banner2 {
+    height: var(--tamanho-banner);
+    background-image: url('https://i.pinimg.com/originals/85/02/20/8502209caddc3417e687382704c59e1c.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner2 .container p {
+    width: 70%;
+    font-size: 70px;
+    justify-content: center;
+    align-items: center;
+}
+.banner2 .container{
+    justify-content:flex-start;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+
+/* Noticias */
+.cardn {
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	margin: 20px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.cardn a{
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.cardn h2 {
+    font-family: 'Russo One';
+	font-size: 24px;
+	margin-bottom: 10px;
+    color: #A20000;
+}
+
+.cardn p {
+    font-family: 'Russo One';
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+    color: black;
+}
+
+.cardn img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+.cardn button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #A20000;
+    color: white;
+}
+
+/* slider section  */
+
+section.slider{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.slider-content {
+    width: 600%;
+    height: 700px;
+    display: flex;
+}
+
+.slider-content input{
+    display: none;
+}
+
+.slide-box {
+    width: 16.66%;
+    height: auto;
+    position: relative;
+    transition: 1s;
+}
+
+
+.slide-box img{
+    width: 100%;
+}
+
+.nav-manual, .nav-auto{
+    position:absolute;
+    width: 100%;
+    margin-top: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .manual-btn, .nav-auto div{
+    border: 1px solid #A20000;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+    margin-right: 20px;
+}
+
+.nav-manual .manual-btn:hover{
+    background-color: #A20000;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3,#radio4:checked ~ .nav-auto .auto-btn4, #radio5:checked ~ .nav-auto .auto-btn5, #radio6:checked ~ .nav-auto .auto-btn6{
+    background-color: #A20000;
+}
+
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro{
+    margin-left: -16.66%;
+}
+
+#radio3:checked ~ .primeiro{
+    margin-left: -33.3%;
+}
+
+#radio4:checked ~ .primeiro{
+    margin-left: -66.6%;
+}
+
+#radio5:checked ~ .primeiro{
+    margin-left: -99.9%;
+}
+
+#radio6:checked ~ .primeiro{
+    margin-left: -133.2%;
+}
+
+@media screen and (max-width: 900px) {
+    .img-desktop{
+        display: none;
+    }
+
+    .nav-auto, .nav-manual{
+        margin-top: 50%;
+    }
+}
