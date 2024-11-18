@@ -43,6 +43,8 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+  console.log("PAssei aq 2")
+
    
 
     // Faça as validações dos valores

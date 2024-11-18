@@ -88,14 +88,21 @@ function cadastrar() {
   var senhaVar = senha_input.value;
   var confirmacaoSenhaVar = confirmacao_senha_input.value;
  
+   // Verificando se há algum campo em branco
+   if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" 
+    ) {
+      alert('Preencha todos os campos para se cadastrar!');
 
-  // Verificando se há algum campo em branco
-  if (
-    nomeVar == "" ||
-    emailVar == "" ||
-    senhaVar == "" ||
-    confirmacaoSenhaVar == "" 
-  )
+      // finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
 
 
   // Enviando o valor da nova input
@@ -117,24 +124,29 @@ function cadastrar() {
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
-        cardErro.style.display = "block";
+        // cardErro.style.display = "block";
 
-        mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        // mensagem_erro.innerHTML =
+        //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
         setTimeout(() => {
           window.location = "login.html";
         }, "2000");
+        console.log("Deu certo")
 
-        limparFormulario();
-        finalizarAguardar();
+
+        // limparFormulario();
+        // finalizarAguardar();
       } else {
+        console.log("Deu errado 1")
         throw "Houve um erro ao tentar realizar o cadastro!";
       }
     })
     .catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-      finalizarAguardar();
+      // console.log(`#ERRO: ${resposta}`);
+      console.log("Deu errado 2")
+
+      // finalizarAguardar();
     });
 
   return false;
