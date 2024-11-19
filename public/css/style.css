@@ -254,7 +254,7 @@ body{
 .card h2 {
         text-align: center;
         margin-bottom: 20px;
-      }
+}
 
 
 .formulario{
@@ -296,8 +296,24 @@ body{
         cursor: pointer;   
         width: 30%; 
         margin: 10px;
-
 } 
+.botao:hover {
+    background-color:#0c8196; 
+    
+}
+
+.texto-link{
+    margin-top: 2%;
+    font-size: 15px;
+    align-self: center;
+    text-decoration: none;
+    color: #A20000;
+ 
+}
+a:hover{
+    color:#0c8196; 
+}
+
  /* CADASTRO  */
 .cadastro {
     height: var(--tamanho-login);
@@ -319,6 +335,30 @@ body{
 .card-cadastro h2 {
     text-align: center;
     margin-bottom: 20px;
+  }
+  /* CARD ERRO */
+
+  .alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .card_erro {
+    display: none;
+    background-color: #fff;
+    color: #0c8196;
+    width: 230px;
+    position: fixed;
+    border-radius: 15px;
+    border: #0c8196 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+    font-family: "Russo One";
   }
 
   /* BANNER NOTÍCIA */
@@ -343,13 +383,15 @@ body{
 }
 
 /* Noticias */
+
+
 .cardn {
 	background-color: #f2f2f2;
 	border-radius: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	
 	padding: 20px;
 	margin: 20px;
-	width: 300px;
+	width: 500px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -378,7 +420,7 @@ body{
 
 .cardn img {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	margin-bottom: 20px;
 }
 .cardn button{
@@ -390,101 +432,4 @@ body{
 }
 
 /* slider section  */
-
-section.slider{
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    overflow: hidden;
-}
-
-.slider-content {
-    width: 1000%; /* 10 slides */
-    display: flex;
-    transition: margin-left 1s ease;
-}
-
-.slider-content input{
-    display: none;
-}
-
-.slide-box {
-    width: 10%;
-    flex-shrink: 0;
-    overflow: hidden; /* não sair do contêiner */
-}
-
-
-.img-desktop{
-    width: 100%; /* Largura total do slide */
-    height: 600px; /* Mantém as proporções originais da imagem */
-
-}
-/* botões dos slides */
-.nav-manual, .nav-auto{
-    position:absolute;
-    width: 100%;
-    margin-top: 53%;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-manual .manual-btn, .nav-auto div{
-    border: 1px solid #A20000;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
-    margin-right: 20px;
-}
-
-.nav-manual .manual-btn:hover{
-    background-color: #A20000;
-}
-
-#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3,#radio4:checked ~ .nav-auto .auto-btn4, #radio5:checked ~ .nav-auto .auto-btn5, #radio6:checked ~ .nav-auto .auto-btn6{
-    background-color: #A20000;
-}
-
-#radio1:checked ~ .slider-content{
-    margin-left: 0%;
-}
-
-#radio2:checked ~ .slider-content{
-    margin-left: -15%;
-}
-
-#radio3:checked ~ .slider-content{
-    margin-left: -25%;
-}
-
-#radio4:checked ~ .slider-content{
-    margin-left: -30%;
-}
-
-#radio5:checked ~ .slider-content{
-    margin-left: -40%;
-}
-
-#radio6:checked ~ .slider-content{
-    margin-left: -50%;
-}
-
-#radio7:checked ~ .slider-content{
-    margin-left: -60%;
-}
-#radio8:checked ~ .slider-content{
-    margin-left: -70%;
-}
-#radio9:checked ~ .slider-content{
-    margin-left: -80%;
-}
-
-#radio10:checked ~ .slider-content{
-    margin-left: -90%;
-}
 

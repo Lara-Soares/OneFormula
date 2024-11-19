@@ -144,98 +144,7 @@
 
   <!-- Slides -->
 
-  <section class="slider">
-    <div class="slider-content">
-
-      <input type="radio" name="btn-radio" id="radio1">
-      <input type="radio" name="btn-radio" id="radio2">
-      <input type="radio" name="btn-radio" id="radio3">
-      <input type="radio" name="btn-radio" id="radio4">
-      <input type="radio" name="btn-radio" id="radio5">
-      <input type="radio" name="btn-radio" id="radio6">
-      <input type="radio" name="btn-radio" id="radio7">
-      <input type="radio" name="btn-radio" id="radio8">
-      <input type="radio" name="btn-radio" id="radio9">
-      <input type="radio" name="btn-radio" id="radio10">
-
-
-
-
-
-      <div class="slider-content">
-
-        <div class="slide-box">
-        <img class="img-desktop" src="fotos/mclaren.png" alt="slide 1">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/ferrari.png" alt="slide 2">
-
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/redbull.png" alt="slide 3">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/mercedez.png" alt="slide 4">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/aston martin.png" alt="slide 5">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/alpine.png" alt="slide 6">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/haas.png" alt="slide 7">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/rb.png" alt="slide 8">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/williams.png" alt="slide 9">
-      </div>
-
-      <div class="slide-box">
-        <img class="img-desktop" src="fotos/stake.png" alt="slide 10">
-      </div>
-
-      <div class="nav-auto">
-        <div class="auto-btn1"></div>
-        <div class="auto-btn2"></div>
-        <div class="auto-btn3"></div>
-        <div class="auto-btn4"></div>
-        <div class="auto-btn5"></div>
-        <div class="auto-btn6"></div>
-        <div class="auto-btn7"></div>
-        <div class="auto-btn8"></div>
-        <div class="auto-btn9"></div>
-        <div class="auto-btn10"></div>
-
-
-
-      </div>
-
-      <div class="nav-manual">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
-        <label for="radio4" class="manual-btn"></label>
-        <label for="radio5" class="manual-btn"></label>
-        <label for="radio6" class="manual-btn"></label>
-        <label for="radio7" class="manual-btn"></label>
-        <label for="radio8" class="manual-btn"></label>
-        <label for="radio9" class="manual-btn"></label>
-        <label for="radio10" class="manual-btn"></label>
-
-      </div>
-
-    </div>
+ 
 
 
 
@@ -253,25 +162,5 @@
 
 <script>
 
-let cont = 1; // Inicia com o primeiro slide
-const totalSlides = 10; // Número total de slides
 
-// Define o primeiro slide como ativo
-document.getElementById('radio1').checked = true;
-
-// Alterna entre os slides a cada 5 segundos
-setInterval(() => {
-    proximaImg();
-}, 5000);
-
-function proximaImg() {
-    cont++; // Avança o contador
-
-    if (cont > totalSlides) {
-        cont = 1; // Reinicia ao atingir o último slide
-    }
-
-    // Ativa o próximo slide
-    document.getElementById('radio' + cont).checked = true;
-}
 </script>

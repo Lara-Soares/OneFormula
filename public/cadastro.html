@@ -15,6 +15,12 @@
 </head>
 
 <body>
+
+  <div class="alerta_erro">
+    <div class="card_erro" id="cardErro">
+      <span id="mensagem_erro"></span>
+    </div>
+</div>
   <!--  Header  -->
   <div class="header">
     <div class="container">
@@ -59,7 +65,8 @@
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="********" />
           </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+          <button class="botao" onclick="cadastrar()">Cadastrar</button><br>
+          <a href="./login.html" class="texto-link">Já possui uma conta? Fazer login</a>
         </div>
       </div>
     </div>
@@ -88,22 +95,60 @@ function cadastrar() {
   var senhaVar = senha_input.value;
   var confirmacaoSenhaVar = confirmacao_senha_input.value;
  
-   // Verificando se há algum campo em branco
-   if (
+   
+    // Verificando se há algum campo em branco
+    if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" 
     ) {
-      alert('Preencha todos os campos para se cadastrar!');
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha todos os campos para continuar";
 
-      // finalizarAguardar();
+      finalizarAguardar();
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
+
+
+    } else if (nomeVar.length < 1 ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Insira um nome válido";
+
+      finalizarAguardar();
+      return false;
+
+    } else if (emailVar.includes('@') == false && emailVar.includes('.') == false) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "E-mail inválido";
+
+      finalizarAguardar();
+      return false;
+
     }
+    else if (senhaVar.length < 6) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Senha deve conter no mínimo 6 caracteres";
 
+      finalizarAguardar();
+      return false;
 
+    }
+    else if (confirmacaoSenhaVar != senhaVar) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Confirmação de senha inválida";
+
+        finalizarAguardar();
+        return false;
+
+      } else {
+        setInterval(sumirMensagem, 5000);
+      }
+    
 
   // Enviando o valor da nova input
   fetch("/usuarios/cadastrar", {

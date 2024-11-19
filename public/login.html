@@ -15,6 +15,8 @@
 
 <body>
 
+    
+
     <!--Header-->
 
     <div class="header">
@@ -52,7 +54,8 @@
                         <span>Senha:</span>
                         <input id="senha_input" type="password" placeholder="********">
                     </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
+                    <button class="botao" onclick="entrar()">Entrar</button><br>
+                    <a href="./cadastro.html" class="texto-link">Não possui uma conta? Cadastre-se!</a>
                 </div>
 
             </div>
@@ -68,21 +71,16 @@
 </body>
 </html>
 
-
-
-<script>
-
-
-  
+<script>  
 function entrar() {
-        
+        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha todos os campos para continuar";
             finalizarAguardar();
             return false;
         }
@@ -115,8 +113,9 @@ function entrar() {
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
 
+
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "index2.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
