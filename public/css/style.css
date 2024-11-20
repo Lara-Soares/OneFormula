@@ -210,7 +210,8 @@ body{
     height: var(--tamanho-footer);
     color: #fff;
     display: flex;
-    font-size: 10px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .footer .container {
@@ -388,9 +389,9 @@ a:hover{
 .cardn {
 	background-color: #f2f2f2;
 	border-radius: 10px;
-	
-	padding: 20px;
-	margin: 20px;
+	padding: 30px;
+	margin: 100px;
+    margin-left: 400px;
 	width: 500px;
 	display: flex;
 	flex-direction: column;
@@ -423,6 +424,7 @@ a:hover{
 	height: 100%;
 	margin-bottom: 20px;
 }
+
 .cardn button{
     border: none;
     border-radius: 5px;
@@ -432,4 +434,50 @@ a:hover{
 }
 
 /* slider section  */
+.containers{
+    padding: 1rem;
+}
+.slider-wrapper{
+    position: relative;
+    max-width: 50rem;
+    margin: 0 auto;
+ 
+}
+.slider{
+    display: flex;
+    aspect-ratio: 16/10; /*TAMANHO TOTAL*/
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    overflow: hidden;
+}
+
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+/* BOTÕES */
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #A20000;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover{
+    opacity: 1;
+}
 
