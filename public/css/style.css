@@ -481,3 +481,68 @@ a:hover{
     opacity: 1;
 }
 
+/* QUIZ */
+.quiz{
+    background-image: url("https://media.giphy.com/media/kfMBsQsLoDK9JYE6R5/giphy.gif");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+	
+}
+.quiz button{
+    background-color: #0c8196 ; 
+        color: #e5e5e5;
+        padding: 10px ;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;   
+        width: 30%; 
+        margin: 400px;
+
+}
+
+.flex-colunar {
+    display: flex;	
+    background-color: #e5e5e5;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 50px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+    margin-left: 300px;
+    flex-direction: column;
+}
+
+.width-fit-content {
+    width: fit-content;
+    
+}
+
+.padding-8 {
+    padding: 8px;
+}
+
+.text-bold {
+    font-weight: 'Russo One';
+}
+
+.text-success-with-bg {
+    color: rgb(6, 92, 6);
+    background-color: green;
+}
+
+.text-warning-with-bg {
+    color: orangered;
+    background-color: orange;
+}
+
+.text-danger-with-bg {
+    color: rgb(145, 12, 12);
+    background-color: red;
+}
+
+.text-new-gray {
+    color: grey;
+}
