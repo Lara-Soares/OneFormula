@@ -437,26 +437,25 @@ a:hover{
 .containers{
     padding: 1rem;
 }
-.slider-wrapper{
+.slider-wrapper{ 
     position: relative;
-    max-width: 50rem;
+    width: 60%;
     margin: 0 auto;
+    
  
 }
 .slider{
     display: flex;
     aspect-ratio: 16/10; /*TAMANHO TOTAL*/
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    overflow: hidden;
+    overflow: hidden; /*esconder a barra*/
 }
 
 .slider img{
-    flex: 1 0 100%;
     scroll-snap-align: start;
-    object-fit: cover;
+    background-size: cover;
 }
 /* BOTÕES */
 .slider-nav{
@@ -465,7 +464,7 @@ a:hover{
     position: absolute;
     bottom: 1.25rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-30%);
     z-index: 1;
 }
 .slider-nav a{
@@ -502,17 +501,24 @@ a:hover{
 
 }
 
+
 .flex-colunar {
     display: flex;	
     background-color: #e5e5e5;
 	border-radius: 10px;
 	padding: 10px;
-	margin: 50px;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-    margin-left: 300px;
+    margin: 300px/300px;
     flex-direction: column;
+   
+}
+
+.flex-colunar width-fit-content border-primary{
+    display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .width-fit-content {
@@ -522,27 +528,21 @@ a:hover{
 
 .padding-8 {
     padding: 8px;
-}
 
-.text-bold {
-    font-weight: 'Russo One';
 }
-
+/* acertou */
 .text-success-with-bg {
     color: rgb(6, 92, 6);
-    background-color: green;
+    background-color: LimeGreen;
 }
-
+/* Quantas acertou */
 .text-warning-with-bg {
-    color: orangered;
-    background-color: orange;
+    color: #A20000;
+    background-color:#FFA500 ;
 }
-
+/* errou */
 .text-danger-with-bg {
     color: rgb(145, 12, 12);
-    background-color: red;
+    background-color: 	#FF6347	;
 }
 
-.text-new-gray {
-    color: grey;
-}
