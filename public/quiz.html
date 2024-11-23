@@ -22,17 +22,10 @@
       </div>
       <ul class="navbar">
         <li class="barra">
-            <a href="index.html">Início</a>
+            <a href="dashboard.html">Dashboards</a>
         </li>
         <li>
           <a href="noticias.html">Notícias</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li>
-          <a href="cadastro.html">Cadastro</a>
         </li>
       </ul>
     </div>
@@ -42,10 +35,10 @@
 
   <!-- quiz -->
 
-  <body onload="onloadEsconder()">
-    <div id="pontuacaoEJogo">
+  <body>
+    <div id="pontuacaoEJogo" class="pontuacaoEJogo">
       <div class="quiz">
-        <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+        <button onclick="iniciarQuiz()" id="btnIniciarQuiz">INICIAR QUIZ</button>
         </div>
         <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
             <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
@@ -59,7 +52,7 @@
                 <span id="msgFinal" class="width-fit-content">***</span>
             </div>
         </div>
-
+        <br><br>
         <div id="jogo" class="width-fit-content flex-colunar border-secondary">
 
             <div id="infoQuestao" class="padding-8">
@@ -97,8 +90,9 @@
             <div id="botoes" class="flex-colunar padding-8">
                 <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
                 <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
                 <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                <button onclick="cadastrarResposta()" id="btnConcluir" disabled>Finalizar Quiz</button> 
+
             </div>
 
         </div>
@@ -116,7 +110,7 @@
 <script>
     const listaDeQuestoes = [
 
-        {
+        { id:1,
             pergunta: "Qual foi o primeiro país africano a sediar uma corrida de F1?",
             alternativaA: "Egito",
             alternativaB: "Tunísia",
@@ -125,7 +119,7 @@
             alternativaCorreta: "alternativaC"
         },
 
-        {
+        {id:2,
             pergunta: "Quantas mulheres já participaram da F1?",
             alternativaA: "Nove",
             alternativaB: "Seis",
@@ -134,7 +128,7 @@
             alternativaCorreta: "alternativaA"
         },
 
-        {
+        {id:3,
             pergunta: "Qual década ficou conhecida com Era Britânica?",
             alternativaA: "1970",
             alternativaB: "1960",
@@ -143,7 +137,7 @@
             alternativaCorreta: "alternativaB"
         },
 
-        {
+        {id:4,
             pergunta: "Quem foi o primeiro brasileiro campeão da F1?",
             alternativaA: "José Carlos Pace",
             alternativaB: "Wilson Fittipaldi",
@@ -152,7 +146,7 @@
             alternativaCorreta: "alternativaC"
         },
 
-        {
+        {id:5,
             pergunta: "Quando foi realizada a primeira corrida de Fórmula 1 no Brasil?",
             alternativaA: "Autódromo de Jacarepaguá em 1978",
             alternativaB: "Autódromo de Interlagos em 1972",
@@ -161,7 +155,7 @@
             alternativaCorreta: "alternativaB"
         },
 
-        {
+        {id:6,
             pergunta: "Qual é a rivalidade que foi considerada a maior da história da Fórmula 1?",
             alternativaA: " Alain Prost e Nigel Mansell ",
             alternativaB: " Ayrton Senna e Nelson Piquet ",
@@ -170,7 +164,7 @@
             alternativaCorreta: "alternativaD"
         },
 
-        {
+        {id:7,
             pergunta: "Qual piloto foi campeão pilotando por quatro equipes?",
             alternativaA: " Juan Manuel Fangio ",
             alternativaB: " Alberto Ascari",
@@ -179,7 +173,7 @@
             alternativaCorreta: "alternativaA"
         },
 
-        {
+        {id:8,
             pergunta: "Qual foi o Pit Stop mais rápido da história?",
             alternativaA: " Red Bull 1,82 segundo",
             alternativaB: " McLaren  1,80 segundo",
@@ -187,7 +181,7 @@
             alternativaD: " Red Bull 1,98 segundo",
             alternativaCorreta: "alternativaB"
         },
-        {
+        {id:9,
             pergunta: "Um piloto perde uma média de quantos kgs durante uma corrida?",
             alternativaA: " 2kgs",
             alternativaB: " 1kg",
@@ -196,7 +190,7 @@
             alternativaCorreta: "alternativaA"
         },
 
-        {
+        {id:10,
             pergunta: "O piloto mais jovem a ser campeão mundial de Fórmula 1 é:",
             alternativaA: " Lando Norris",
             alternativaB: " Max Verstappen",
@@ -205,7 +199,7 @@
             alternativaCorreta: "alternativaD"
         },
 
-        {
+        {id:11,
             pergunta: "Quem ficou conhecido como Rei de Mônaco",
             alternativaA: " Ayrton Senna",
             alternativaB: " Graham Hill",
@@ -217,7 +211,7 @@
 
 
     ]
-
+        
     // variáveis globais    
     let numeroDaQuestaoAtual = 0
     let pontuacaoFinal = 0
@@ -226,11 +220,31 @@
     let erradas = 0
     let quantidadeDeQuestoes = listaDeQuestoes.length
     // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
-
-    function onloadEsconder() {
-        document.getElementById('pontuacao').style.display = "none"
-        document.getElementById('jogo').style.display = "none"
+    function cadastrarResposta(){
+        var idusuario = sessionStorage.ID_USUARIO
+        for (let index = 0; index < listaDeQuestoes.length; index++) {
+        var isCorreta = eCorreta[index];
+        var idpergunta = listaDeQuestoes[index].id
+        fetch("/resposta/cadastrar", {
+            method : "POST",
+            headers : {
+                "Content-Type": "application/json"
+            },
+            // passando informações pro controller
+            body:JSON.stringify({
+                idusuario:idusuario, 
+                idpergunta:idpergunta,
+                isCorreta:isCorreta
+            })
+        }).then(function (resposta)
+        {console.log(resposta)
+            
+        }).catch(function (resposta) {
+            console.log(`#erro: ${resposta}`)
+        })
     }
+    }
+   
 
     function iniciarQuiz() {
         document.getElementById('pontuacao').style.display = "flex"
@@ -315,7 +329,7 @@
         // atualiza a página
         window.location.reload()
     }
-
+    var eCorreta = []
     function checarResposta() {
         const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] // questão atual 
         const respostaQuestaoAtual = questaoAtual.alternativaCorreta // qual é a resposta correta da questão atual
@@ -337,15 +351,16 @@
                 document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
                 pontuacaoFinal++
                 certas++
+                eCorreta.push('1')
                 document.getElementById("spanCertas").innerHTML = certas
                 numeroDaQuestaoAtual++
             } else if (option.checked && option.value !== respostaQuestaoAtual) {
                 const wrongLabelId = option.labels[0].id
-
                 document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
                 document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
                 tentativaIncorreta++
                 erradas++
+                eCorreta.push('0')
                 document.getElementById("spanErradas").innerHTML = erradas
                 numeroDaQuestaoAtual++
             }
@@ -398,6 +413,4 @@
         btnSubmeter.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
-
     }
-</script>

@@ -201,6 +201,12 @@ body{
     width: 200px;
 }
 
+.pontuacaoEJogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* FOOTER */
