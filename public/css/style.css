@@ -235,6 +235,7 @@ body{
     background-image: url('../fotos/tifosi.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 50px;
 }
 
    
@@ -327,6 +328,7 @@ a:hover{
     color: #e5e5e5;
     background-image: url('../fotos/fridayspa-francorchamps9-scaled-1920x1080.jpg');
     background-repeat: no-repeat;
+
 }
 .card-cadastro{
     background-color:  #e5e5e5;
@@ -334,7 +336,7 @@ a:hover{
     font-family: Russo One;
     padding: 20px;
     border-radius: 50px;
-    width: 80vh;
+    width: 70vh;
     margin: 10px;
     border-style: dotted;
 
@@ -397,7 +399,7 @@ a:hover{
 	border-radius: 10px;
 	padding: 30px;
 	margin: 100px;
-    margin-left: 200px;
+    margin-left: 270px;
 	width: 500px;
 	display: flex;
 	flex-direction: column;

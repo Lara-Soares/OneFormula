@@ -113,9 +113,11 @@
 
       acertos = Number(json[0].qtdAcertos)
       erros = Number(json[0].qtdErros)
+
       kpiacertos.innerHTML = acertos
       kpierros.innerHTML = erros
       kpirespostas.innerHTML = acertos+erros
+      
       const ctx = document.getElementById("myChart");
       new Chart(ctx, {
         type: "doughnut",
@@ -125,8 +127,8 @@
             label: "Acertos e Erros",
             data: [erros, acertos],
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',],
+              'rgb(220,20,60)',
+              'rgb(123,104,238)',],
               hoverOffset: 4
           }],
         },

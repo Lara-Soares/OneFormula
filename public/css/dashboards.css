@@ -148,12 +148,7 @@ canvas {
   height: 100% !important;
 }
 
-/* PAGINA DOS GRÁFICOS 2023 */
 
-.janela {
-  display: flex;
-  /* width: 100vw; */
-}
 
 .header-left a {
   text-decoration: none;
@@ -175,17 +170,7 @@ canvas {
   background-color: #A20000;
 }
 
-.dash-right {
-  display: flex;
-  width: 70%;
-  height: fit-content;
-  background-color: #161618;
-  position: relative;
-  top: 0;
-  left: 25%;
-  height: 100vh;
-  overflow: auto;
-}
+
 
 .header-left h1 {
   color: white;
@@ -250,8 +235,8 @@ canvas {
 	border-radius: 10px;
 	padding: 30px;
 	margin: 50px;
-  margin-left: 100px;
-	width: 200px;
+  margin-left: 90px;
+	width: 150px;
 	display: flex;
 	flex-direction:column;
 	justify-content:center;
@@ -260,4 +245,10 @@ canvas {
 
 .kpicenter{
   display: flex;
+}
+
+.chart{
+  width: 80%;
+  display: flex;
+  
 }
