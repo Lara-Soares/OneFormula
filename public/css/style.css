@@ -443,13 +443,13 @@ a:hover{
 .containers{
     padding: 1rem;
 }
+
 .slider-wrapper{ 
     position: relative;
     width: 60%;
-    margin: 0 auto;
-    
- 
+    margin: 0 auto
 }
+
 .slider{
     display: flex;
     aspect-ratio: 16/10; /*TAMANHO TOTAL*/
@@ -463,6 +463,7 @@ a:hover{
     scroll-snap-align: start;
     background-size: cover;
 }
+
 /* BOTÕES */
 .slider-nav{
     display: flex;
@@ -473,6 +474,7 @@ a:hover{
     transform: translateX(-30%);
     z-index: 1;
 }
+
 .slider-nav a{
     width: 0.5rem;
     height: 0.5rem;
@@ -482,9 +484,12 @@ a:hover{
     transition: opacity ease 250ms;
 }
 
+
 .slider-nav a:hover{
     opacity: 1;
 }
+
+
 
 /* QUIZ */
 .quiz{
