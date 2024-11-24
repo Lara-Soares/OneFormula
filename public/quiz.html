@@ -256,9 +256,9 @@
         preencherHTMLcomQuestaoAtual(0)
 
         btnSubmeter.disabled = false
-        btnProx.disabled = true
-        // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = true
+        btnProx.disabled = false
+        btnConcluir.disabled = false
+        btnTentarNovamente.disabled = false
     }
 
     function preencherHTMLcomQuestaoAtual(index) {
@@ -409,8 +409,9 @@
 
         document.getElementById('jogo').classList.add("text-new-gray") 
 
-        btnProx.disabled = true
-        btnSubmeter.disabled = true
-        // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = false
+        // btnProx.disabled = true
+        // btnSubmeter.disabled = true
+        // btnTentarNovamente.disabled = false
+        // btnConcluir.disabled = false
     }
+</script>

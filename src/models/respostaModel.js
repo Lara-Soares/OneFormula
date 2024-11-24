@@ -1,6 +1,6 @@
 var database = require("../database/config")
 
-function resposta(idPergunta, idusuario, isCorreto) {
+function cadastrar(idPergunta, idusuario, isCorreto) {
     console.log("ACESSEI O USUARIO MODEL \n\n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n\t\t >> verifique suas credenciais de acesso ao banco\n\t\t >> e se o servidor de seu BD está rodando corretamente.\n\n function cadastrarResposta():", idPergunta, idusuario, isCorreto);
     
     // Query para inserir os dados na tabela `resposta`
@@ -12,4 +12,29 @@ function resposta(idPergunta, idusuario, isCorreto) {
     return database.executar(instrucaoSql);
 }
 
-module.exports={resposta}
+ function listarDesempenho(){
+    var instrucaoSql = `SELECT
+    nome,
+    (
+        SUM(
+            CASE
+                WHEN isCorreto = '1' THEN 1
+                ELSE 0
+            END
+        ) 
+    )  AS qtdAcertos, 
+    COUNT(idResposta) - SUM(
+            CASE
+                WHEN isCorreto = '1' THEN 1
+                ELSE 0
+            END
+        )  as qtdErros
+FROM Resposta
+    JOIN Usuario ON resposta.idusuario = Usuario.idusuario
+GROUP BY
+    nome
+ORDER BY qtdAcertos DESC;`
+return database.executar(instrucaoSql);
+ }
+module.exports={cadastrar, listarDesempenho}
+
