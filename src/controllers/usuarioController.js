@@ -1,6 +1,6 @@
 var usuarioModel = require("../models/usuarioModel");
 
-// pega os dados html e usa model pro banco
+// pega os dados html/routes e usa model pro banco
 
 
 function autenticar(req, res) {

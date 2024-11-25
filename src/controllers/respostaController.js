@@ -1,5 +1,5 @@
 var respostaModel = require("../models/respostaModel");
-
+// recebe os dados da routes e interage com o models para retornar uma mensagem para routes
 
 function cadastrar(req,res){
     idusuario = req.body.idusuario;

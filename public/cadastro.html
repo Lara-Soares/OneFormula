@@ -88,8 +88,6 @@
 function cadastrar() {
  
 
-  //Recupere o valor da nova input pelo nome do id
-  // Agora vá para o método fetch logo abaixo
   var nomeVar = nome_input.value;
   var emailVar = email_input.value;
   var senhaVar = senha_input.value;
@@ -129,7 +127,7 @@ function cadastrar() {
 
     }
     else if (senhaVar.length < 6) {
-      cardErro.style.display = "block";
+      card.style.display = "block";
       mensagem_erro.innerHTML =
         "Senha deve conter no mínimo 6 caracteres";
 

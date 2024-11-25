@@ -91,12 +91,12 @@ function entrar() {
 
        
 
-        fetch("/usuarios/autenticar", {
-            method: "POST",
+        fetch("/usuarios/autenticar", { //routes
+            method: "POST", //enviar dados ao servidor
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
+            body: JSON.stringify({ //dos inputs
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
@@ -109,7 +109,8 @@ function entrar() {
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
+                    //session.storage armazena informações durante a sessão do navegador 
+                    sessionStorage.EMAIL_USUARIO = json.email; 
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
 
@@ -130,7 +131,7 @@ function entrar() {
                 });
             }
 
-        }).catch(function (erro) {
+        }).catch(function (erro) { //O erro é exibido no console
             console.log(erro);
         })
 

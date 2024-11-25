@@ -102,15 +102,18 @@
 
     function listarDesempenho() {
   fetch("/resposta/listarDesempenho", {
-    method: "GET"
+    method: "GET" //route resposta
   }).then((res) => {
     res.json().then((json) => {
       console.log(json)
       console.log(json[0].qtdAcertos)
 
+      //obtem os valores
       acertos = Number(json[0].qtdAcertos)
       erros = Number(json[0].qtdErros)
 
+
+      //atualiza no html
       kpiacertos.innerHTML = acertos
       kpierros.innerHTML = erros
       kpirespostas.innerHTML = acertos+erros

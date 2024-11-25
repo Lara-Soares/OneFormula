@@ -201,12 +201,7 @@ body{
     width: 200px;
 }
 
-.pontuacaoEJogo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 
 /* FOOTER */
@@ -393,7 +388,6 @@ a:hover{
 
 /* Noticias */
 
-
 .cardn {
 	background-color: #f2f2f2;
 	border-radius: 10px;
@@ -454,8 +448,7 @@ a:hover{
 
 .slider{
     display: flex;
-    aspect-ratio: 16/10; /*TAMANHO TOTAL*/
-    overflow-x: auto;
+    aspect-ratio: 16/10; /*TAMANHO TOTAL largura/altura */
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     overflow: hidden; /*esconder a barra*/
@@ -473,8 +466,8 @@ a:hover{
     position: absolute;
     bottom: 1.25rem;
     left: 50%;
-    transform: translateX(-30%);
-    z-index: 1;
+    transform: translateX(-30%);/* levemente  para a esquerda e que altera posição*/
+    z-index: 1; /* botões acima das imagens*/
 }
 
 .slider-nav a{
@@ -485,12 +478,6 @@ a:hover{
     opacity: 0.75;
     transition: opacity ease 250ms;
 }
-
-
-.slider-nav a:hover{
-    opacity: 1;
-}
-
 
 
 /* QUIZ */
@@ -556,6 +543,13 @@ a:hover{
 /* errou */
 .text-danger-with-bg {
     color: rgb(145, 12, 12);
-    background-color: 	#FF6347	;
+    background-color: 	#FF6347;
+}
+
+.pontuacaoEJogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 

@@ -219,12 +219,15 @@
     let certas = 0
     let erradas = 0
     let quantidadeDeQuestoes = listaDeQuestoes.length
-    // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
+    
+
     function cadastrarResposta(){
         var idusuario = sessionStorage.ID_USUARIO
         for (let index = 0; index < listaDeQuestoes.length; index++) {
+
         var isCorreta = eCorreta[index];
         var idpergunta = listaDeQuestoes[index].id
+
         fetch("/resposta/cadastrar", {
             method : "POST",
             headers : {
@@ -255,6 +258,7 @@
 
         preencherHTMLcomQuestaoAtual(0)
 
+// false porque tem que clicar em iniciar primeiro
         btnSubmeter.disabled = false
         btnProx.disabled = false
         btnConcluir.disabled = false
@@ -265,8 +269,10 @@
         habilitarAlternativas(true)
         const questaoAtual = listaDeQuestoes[index]
         numeroDaQuestaoAtual = index
+
         console.log("questaoAtual")
         console.log(questaoAtual)
+
         document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 // ajustando porque o index começa em 0
         document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
         document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
@@ -275,7 +281,7 @@
         document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
     }
 
-    function submeter() {
+    function submeter() { //ir para a próxima pergunta depois de ter escolhido alguma opção
         const options = document.getElementsByName("option"); // recupera alternativas no html
 
         let hasChecked = false
@@ -286,7 +292,7 @@
             }
         }
 
-        if (!hasChecked) {
+        if (!hasChecked) { 
             alert("Não há alternativas escolhidas. Escolha uma opção.")
         } else {
             btnSubmeter.disabled = true
@@ -308,7 +314,7 @@
 
     }
 
-    function avancar() {
+    function avancar() { // vai para a próxima questão
         btnProx.disabled = true
         btnSubmeter.disabled = false
 
@@ -349,15 +355,18 @@
         options.forEach((option) => {
             if (option.checked === true && option.value === respostaQuestaoAtual) {
                 document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+                //dash
                 pontuacaoFinal++
                 certas++
                 eCorreta.push('1')
                 document.getElementById("spanCertas").innerHTML = certas
                 numeroDaQuestaoAtual++
+
             } else if (option.checked && option.value !== respostaQuestaoAtual) {
                 const wrongLabelId = option.labels[0].id
                 document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
                 document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+                //dash
                 tentativaIncorreta++
                 erradas++
                 eCorreta.push('0')
@@ -388,7 +397,7 @@
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
         if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você não estudou..."
+            textoParaMensagemFinal = "Parece que você está no fim do grid..."
             classComCoresParaMensagemFinal = "text-danger-with-bg"
         }
         else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
@@ -396,10 +405,10 @@
             classComCoresParaMensagemFinal = "text-warning-with-bg"
         }
         else if (porcentagemFinalDeAcertos >= 0.9) {
-            textoParaMensagemFinal = "Uau, parabéns!"
+            textoParaMensagemFinal = "Uau, parabéns você está na frente do grid!"
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
-
+        
         textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
 
 
