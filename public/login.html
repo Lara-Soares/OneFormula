@@ -79,7 +79,7 @@ function entrar() {
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            card.style.display = "block"
+            cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha todos os campos para continuar";
             finalizarAguardar();
             return false;
