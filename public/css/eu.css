@@ -8,10 +8,6 @@ body{
     background-color: #A20000;
 }
 
-.header{
-    height: var(--tamanho-header);
-    border-bottom: 2px solid #A20000;
-}
 
 .container{
     display: flex;
@@ -62,7 +58,7 @@ body{
 /* Container dos cards */
 .container {
     display: flex;
-    gap: 20px; /* Espaçamento entre os cards */
+    gap: 20px; /* Espaçamentodos cards */
     padding: 20px;
   }
   
@@ -71,11 +67,9 @@ body{
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
  
