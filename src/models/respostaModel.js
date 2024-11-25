@@ -30,7 +30,7 @@ function cadastrar(idPergunta, idusuario, isCorreto) {
             END
         )  as qtdErros
 FROM resposta
-    JOIN Usuario ON resposta.idusuario = Usuario.idusuario
+    JOIN usuario ON resposta.idusuario = usuario.idusuario
 GROUP BY
     nome
 ORDER BY qtdAcertos DESC;`
