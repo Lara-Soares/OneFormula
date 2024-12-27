@@ -112,16 +112,16 @@
       //obtem os valores
       acertos = Number(json[0].qtdAcertos)
       erros = Number(json[0].qtdErros)
-      // adicionando uma nova variável para fazer o cálculo da porcentagem
+      // adicionando uma nova variável para fazer o cálculo da porcentagem 27/12
       var total = acertos+erros;
 
-      //Transformar o dados em porcentagem
+      //Transformar os dados em porcentagem 27/12
       var porcentagemAcertos = ((acertos / total) * 100).toFixed(0);
       var porcentagemErros = ((erros / total) * 100).toFixed(0);
 
 
       //atualiza no html
-      //Mudando as KPIs para porcentagem de acerto e erro
+      //Mudando as KPIs para porcentagem de acerto e erro 27/12
       kpiacertos.innerHTML = `${porcentagemAcertos}%` ;
       kpierros.innerHTML = `${porcentagemErros}%` ;
       kpirespostas.innerHTML = total;
@@ -133,7 +133,8 @@
         data: {
           labels: ["Erros", "Acertos"],
           datasets: [{
-            label: "Acertos e Erros",
+            //mudando as labels para fica melhor o entendimento 27/12
+            labels: ["Acertos", "Erros"],
             data: [erros, acertos],
             backgroundColor: [
               'rgb(47,79,79)',
