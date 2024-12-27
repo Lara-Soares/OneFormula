@@ -11,9 +11,6 @@
     
     <link rel="stylesheet" href="./css/dashboards.css">
 
-
-
-
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -122,7 +119,8 @@
       
       const ctx = document.getElementById("myChart");
       new Chart(ctx, {
-        type: "doughnut",
+        //mudança no formato do gráfico de 'doughnut' para 'pie' 27/12 
+        type: "pie",
         data: {
           labels: ["Erros", "Acertos"],
           datasets: [{

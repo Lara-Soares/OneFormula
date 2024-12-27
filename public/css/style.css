@@ -401,6 +401,7 @@ a:hover{
 	justify-content: center;
 	text-align: center;
 }
+
 .cardn a{
     cursor: pointer;
     transition: 0.4s;
