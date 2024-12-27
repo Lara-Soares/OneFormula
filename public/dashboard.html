@@ -82,11 +82,13 @@
             </div>
         </div>
 
+        <div class="background-chart">
             <div class="chart">
                 <canvas id="myChart">
 
                 </canvas>
             </div>
+        </div>
         </div>
     </div>
 
@@ -110,12 +112,19 @@
       //obtem os valores
       acertos = Number(json[0].qtdAcertos)
       erros = Number(json[0].qtdErros)
+      // adicionando uma nova variável para fazer o cálculo da porcentagem
+      var total = acertos+erros;
+
+      //Transformar o dados em porcentagem
+      var porcentagemAcertos = ((acertos / total) * 100).toFixed(0);
+      var porcentagemErros = ((erros / total) * 100).toFixed(0);
 
 
       //atualiza no html
-      kpiacertos.innerHTML = acertos
-      kpierros.innerHTML = erros
-      kpirespostas.innerHTML = acertos+erros
+      //Mudando as KPIs para porcentagem de acerto e erro
+      kpiacertos.innerHTML = `${porcentagemAcertos}%` ;
+      kpierros.innerHTML = `${porcentagemErros}%` ;
+      kpirespostas.innerHTML = total;
       
       const ctx = document.getElementById("myChart");
       new Chart(ctx, {
@@ -127,8 +136,8 @@
             label: "Acertos e Erros",
             data: [erros, acertos],
             backgroundColor: [
-              'rgb(220,20,60)',
-              'rgb(123,104,238)',],
+              'rgb(47,79,79)',
+              'rgb(139,0,0)',],
               hoverOffset: 4
           }],
         },
