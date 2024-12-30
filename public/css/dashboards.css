@@ -38,7 +38,6 @@ body{
 }
 
 
-
 .item-regua {
   width: 20%;
   text-align: center;
@@ -72,8 +71,6 @@ body{
   align-items: center;
   color: white;
 }
-
-
 
 .cards h1 {
   font-size: 22px;
@@ -174,6 +171,10 @@ canvas {
 
 .header-left h1 {
   color: white;
+}
+/*estilizar a logo que foi adicionada no menu lateral 30/12*/
+.header-left img{
+  width: 300px;
 }
 
 .hello {
