@@ -109,7 +109,7 @@ function cadastrar() {
       return false;
 
 
-    } else if (nomeVar.length < 1 ) {
+    } else if (nomeVar.length <= 1 ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Insira um nome válido";
@@ -117,7 +117,8 @@ function cadastrar() {
       finalizarAguardar();
       return false;
 
-    } else if (emailVar.includes('@') == false && emailVar.includes('.') == false) {
+      //arrumando a verificação 30/12 - anteriormente estava &&
+    } else if (emailVar.includes('@') == false || emailVar.includes('.') == false) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "E-mail inválido";
@@ -144,7 +145,7 @@ function cadastrar() {
         return false;
 
       } else {
-        //setInterval(sumirMensagem, 5000);
+       // setInterval(sumirMensagem, 5000);
       }
     
 
@@ -167,10 +168,11 @@ function cadastrar() {
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
-        // cardErro.style.display = "block";
+         cardErro.style.display = "block";
 
-        // mensagem_erro.innerHTML =
-        //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+         //arrumando o nome do id que estava errado 30/12
+        cardErro.innerHTML =
+          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
         setTimeout(() => {
           window.location = "login.html";
