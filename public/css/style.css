@@ -392,14 +392,21 @@ a:hover{
 	background-color: #f2f2f2;
 	border-radius: 10px;
 	padding: 30px;
+    /* mudando o tamanho da margin para os cars ficarem proporcionalmente iguais 31/12*/
 	margin: 100px;
-    margin-left: 270px;
+    margin-left: 100px;
 	width: 500px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+}
+/*class criada para estilizar os cards um ao lado do outro 31/12*/
+.card-n{
+    display: flex;
+    align-items: center;
+	justify-content: center;
 }
 
 .cardn a{
@@ -424,7 +431,7 @@ a:hover{
 
 .cardn img {
 	width: 100%;
-	height: 100%;
+	height: 50%;
 	margin-bottom: 20px;
 }
 
