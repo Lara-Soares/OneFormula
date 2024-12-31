@@ -97,6 +97,18 @@ body{
     font-weight: 800;
 }
 
+.banner .container img{
+    display: flex;
+    width: 500px;
+}
+
+/*imagem dos vencedores de 2024  31/12*/
+
+.social2 img{
+    display: flex;
+    width: 1349px;  
+}
+
 /*  PRIMEIRA PARTE  */
 
 .social {
@@ -200,8 +212,6 @@ body{
 .box3 img{
     width: 200px;
 }
-
-
 
 
 /* FOOTER */
