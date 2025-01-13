@@ -14,8 +14,11 @@ function cadastrar(req,res){
             res.status(500).json(erro.sqlMessage);
     });
 }
+
+
     function listarDesempenho(req,res){
-        respostaModel.listarDesempenho(req,res).then((resultado )=> {res.status(200).json(resultado)}
+        
+        respostaModel.listarDesempenho().then((resultado )=> {res.status(200).json(resultado)}
     )}
 
 module.exports = {

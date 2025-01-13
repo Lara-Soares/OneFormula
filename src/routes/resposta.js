@@ -9,6 +9,7 @@ var respostaController = require("../controllers/respostaController");
 router.post("/cadastrar", function (req, res) {
     respostaController.cadastrar(req, res);
 })
+
 router.get("/listarDesempenho", function (req,res){
     respostaController.listarDesempenho(req,res)
 })
