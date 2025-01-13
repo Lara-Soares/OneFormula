@@ -11,8 +11,8 @@ function cadastrar(idPergunta, idusuario, isCorreto) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
- function listarDesempenho(){
+// alteração feita no dia 09/01
+ function listarDesempenho(idusuario){
     var instrucaoSql = `SELECT
     nome,
     (
@@ -31,7 +31,7 @@ function cadastrar(idPergunta, idusuario, isCorreto) {
         )  as qtdErros
 FROM resposta
     JOIN usuario ON resposta.idusuario = usuario.idusuario
- 
+    where usuario.idusuario = ${idusuario} 
 GROUP BY
     nome
 ORDER BY qtdAcertos DESC;`
