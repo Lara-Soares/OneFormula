@@ -9,8 +9,8 @@ var respostaController = require("../controllers/respostaController");
 router.post("/cadastrar", function (req, res) {
     respostaController.cadastrar(req, res);
 })
-
-router.get("/listarDesempenho", function (req,res){
+// ajuste feito no dia 09/01
+router.get("/listarDesempenho/:idusuario", function (req,res){
     respostaController.listarDesempenho(req,res)
 })
 
