@@ -15,10 +15,10 @@ function cadastrar(req,res){
     });
 }
 
-
+//ajuste feito no dia 09/01
     function listarDesempenho(req,res){
-        
-        respostaModel.listarDesempenho().then((resultado )=> {res.status(200).json(resultado)}
+        idusuario = req.params.idusuario
+        respostaModel.listarDesempenho(idusuario).then((resultado )=> {res.status(200).json(resultado)}
     )}
 
 module.exports = {
