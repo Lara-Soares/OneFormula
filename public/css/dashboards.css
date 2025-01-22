@@ -27,12 +27,13 @@ body{
   background-color: #212124;
 }
 
+/* 22/01 */
 .dash {
   width: 80%;
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #e07b7bbe;
+  background-color: #f1f1f1;
   height: 100vh;
   overflow: auto;
 }
@@ -58,10 +59,6 @@ body{
 }
 
 
-.ideal {
-  background-color: #9ccc65;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -69,7 +66,7 @@ body{
   height: 450px;
   width: 100%;
   align-items: center;
-  color: white;
+  color: whitesmoke;
 }
 
 .cards h1 {
@@ -101,29 +98,6 @@ body{
   justify-content: center;
 }
 
-.btn-chart {
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: #e6005a;
-  background-color: white;
-  margin: 5px;
-  border-radius: 3px;
-  cursor: pointer
-}
-
-.btn-pink {
-  color: white;
-  background-color: #e6005a;
-}
-
-.btn-white {
-  color: #e6005a;
-  background-color: white;
-
-}
-
 .label-captura {
   height: 80px;
 }
@@ -146,10 +120,10 @@ canvas {
 }
 
 
-
-.header-left a {
+/* 22/01 */
+.header-left a { 
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .header-left {
@@ -157,7 +131,7 @@ canvas {
   top: 0;
   left: 0;
   z-index: 999;
-  height: 100vh;
+  height: 95vh;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -192,23 +166,22 @@ canvas {
 .hello h3 span {
   font-weight: 800;
 }
-
+/* 22/01 */
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
-.btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid black;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
+/*  */
+.btn-nav a:hover {
+  background-color: black;
+  border: none;
+  color: #A20000;
+  cursor: pointer;
 }
 
 
@@ -218,21 +191,9 @@ canvas {
   padding: 0;
 }
 
-.btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
-  cursor: pointer;
-}
 
 .kpi{
-  background-color: #f2f2f2;
+  background-color: #A20000;
 	border-radius: 10px;
 	padding: 30px;
 	margin: 50px;
@@ -243,6 +204,14 @@ canvas {
 	justify-content:center;
   text-align: center;
 }
+/* 22/01 */
+.kpi h2{
+  color: white;
+}
+/* 22/01 */
+.kpi h3{
+  color: white;
+}
 
 .kpicenter{
   display: flex;
@@ -250,7 +219,7 @@ canvas {
 
 /*Adicionando background no gráfico para melhor visualização*/
 .background-chart {
-  background-color: #f2f2f2;
+  background-color: white;
 	border-radius: 10px;
 	padding: 50px;
 	margin: 50px;

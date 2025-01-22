@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <!--2 -->
 
 <head>
     <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
@@ -29,14 +30,19 @@
             <h1>OneFormula</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="idusuario">Paddocker</span>!</h3>
+                <h3>Olá, <span id="usuario">Paddocker</span>!</h3>
             </div>
 
             <div class="btn-nav">
                 <a href="./quiz.html">
                 <h3>Quiz</h3>
                 </a>
+            </div>
 
+            <div class="btn-nav">
+                <a href="./dashboard.html">
+                <h3>Dashboard</h3>
+            </a>
             </div>
 
             <div class="btn-nav">
@@ -98,60 +104,3 @@
         </div>
         </div>
     </div>
-
-
-</body>
-
-</html>
-
-<script>
-    var acertos = 0
-    var erros = 0
-//ajuste feito no dia 09/01
-    function listarDesempenho() {
-        var idusuario = sessionStorage.ID_USUARIO;  
-  fetch(`/resposta/listarDesempenho/${idusuario}`, {
-    method: "GET" //route resposta
-  }).then((res) => {
-    res.json().then((json) => {
-      console.log(json)
-      console.log(json[0].qtdAcertos)
-
-      //obtem os valores
-      acertos = Number(json[0].qtdAcertos)
-      erros = Number(json[0].qtdErros)
-      // adicionando uma nova variável para fazer o cálculo da porcentagem 27/12
-      var total = acertos+erros;
-
-      //Transformar os dados em porcentagem 27/12
-      var porcentagemAcertos = ((acertos / total) * 100).toFixed(0);
-      var porcentagemErros = ((erros / total) * 100).toFixed(0);
-
-
-      //atualiza no html
-      //Mudando as KPIs para percentagem de acerto e erro 27/12
-      kpiacertos.innerHTML = `${porcentagemAcertos}%` ;
-      kpierros.innerHTML = `${porcentagemErros}%` ;
-      kpirespostas.innerHTML = total;
-      
-      const ctx = document.getElementById("myChart");
-      new Chart(ctx, {
-        //mudança no formato do gráfico de 'doughnut' para 'pie' 27/12 
-        type: "pie",
-        data: {
-          labels: ["Erros", "Acertos"],
-          datasets: [{
-            //mudando as labels para fica melhor o entendimento 27/12
-            labels: ["Acertos", "Erros"],
-            data: [erros, acertos],
-            backgroundColor: [
-              'rgb(47,79,79)',
-              'rgb(139,0,0)',],
-              hoverOffset: 4
-          }],
-        },
-      });
-    })
-  })
-}
-</script>
