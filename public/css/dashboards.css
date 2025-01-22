@@ -197,8 +197,9 @@ canvas {
 	border-radius: 10px;
 	padding: 20px;
 	margin: 30px;
-  margin-left: 90px;
+  margin-left: 100px;
 	width: 150px;
+  height: 130px;
 	display: flex;
 	flex-direction:column;
 	justify-content:center;
@@ -221,12 +222,13 @@ canvas {
 .background-chart {
   background-color: white;
 	border-radius: 10px;
-	padding: 50px;
+	padding: 40px;
 	margin: 50px;
-  margin-left: 90px;
-	width: 75%;
+  margin-left: 220px;
+	width: 45%;
 	display: flex;
 	justify-content:center;
+  align-items: center;
 }
 
 .chart{

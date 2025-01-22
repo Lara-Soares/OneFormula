@@ -7,7 +7,7 @@ function cadastrar(req,res){
     isCorreto = req.body.isCorreta;
     //22/01
     notaGeral = req.body.certas;
-    respostaModel.cadastrar(idpergunta, idusuario, isCorreto,certas).then(function (resultado){
+    respostaModel.cadastrar(idpergunta, idusuario, isCorreto,notaGeral).then(function (resultado){
         res.json(resultado)
     })
     .catch(function(erro){

@@ -6,7 +6,7 @@ var router = express.Router();
 var rankingController = require("../controllers/rankingController");
 
 
-router.post("/listarDesempenho/:idusuario", function (req,res){
+router.post("/ranking/:idusuario", function (req,res){
     rankingController.ranking(req,res)
 })
 
