@@ -37,10 +37,14 @@
 
   <body>
     <div id="pontuacaoEJogo" class="pontuacaoEJogo">
+      
       <div class="quiz">
+          <div class="container-quiz">  <!--23/01 criação de nova class para as perguntas ficarem com o gif-->
         <button onclick="iniciarQuiz()" id="btnIniciarQuiz">INICIAR QUIZ</button>
+         </div>
+        <div id="pontuacao">
+            <!-- 24/11 retirada da pontuação na página do quiz -->
         </div>
-        <!-- 24/01 retira da pontuação na página do quiz -->
         <br><br>
         <div id="jogo" class="width-fit-content flex-colunar border-secondary">
 
@@ -56,7 +60,9 @@
             <div id="infoAlternativas" class="padding-8">
                 <span><em>Escolha uma opção dentre as abaixo:</em></span>
             </div>
+        </div>
 
+        
             <div id="opcoes" class="flex-colunar padding-8">
                 <span>
                     <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
@@ -75,7 +81,9 @@
                     <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
                 </span>
             </div>
+        
 
+            
             <div id="botoes" class="flex-colunar padding-8">
                 <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
                 <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
@@ -83,9 +91,12 @@
                 <button onclick="cadastrarResposta()" id="btnConcluir" disabled>Finalizar Quiz</button> 
 
             </div>
-
+       
         </div>
+    
     </div>
+   
+</div>
     <!-- footer -->
 <div class="footer">
     <div class="container">
@@ -382,7 +393,7 @@
         }
     }
 
-    //24/11 retira da mensagem após pontuação na página do quiz
+    //23/11 retirada da mensagem da pontuação na página do quiz
 
    
 
