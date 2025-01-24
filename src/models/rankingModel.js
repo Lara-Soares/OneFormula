@@ -1,9 +1,10 @@
 var database = require("../database/config")
 
+function ranking() {
+    const instrucaoSql = `SELECT fk_usuario, notaGeral FROM pergunta ORDER BY notaGeral;`;
+    return database.executar(instrucaoSql);
+}
 
- function ranking(idusuario){
-    var instrucaoSql = `select fk_usuario,notaGeral from pergunta order by notaGeral;`
-return database.executar(instrucaoSql);
- }
+ 
 module.exports={ranking}
 

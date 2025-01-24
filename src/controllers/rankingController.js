@@ -1,11 +1,20 @@
 var rankingModel = require("../models/rankingModel");
-// recebe os dados da routes e interage com o models para retornar uma mensagem para routes
 
-    function ranking(req,res){
-        idusuario = req.params.idusuario
-        rankingModel.ranking(idusuario).then((resultado )=> {res.status(200).json(resultado)}
-    )}
 
-module.exports = {
-    ranking
+
+function ranking(req, res) {
+    rankingModel.ranking()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!");
+            }
+        })
+        .catch(function (erro) {
+            console.error("Erro ao buscar o ranking:", erro.sqlMessage || erro);
+            res.status(500).json(erro.sqlMessage || erro);
+        });
 }
+
+module.exports = { ranking };

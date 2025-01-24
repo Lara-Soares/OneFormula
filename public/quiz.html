@@ -40,18 +40,7 @@
       <div class="quiz">
         <button onclick="iniciarQuiz()" id="btnIniciarQuiz">INICIAR QUIZ</button>
         </div>
-        <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-            <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-            </div>
-            <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                    <span id="spanPontuacaoFinal">***</span>
-                </span>
-                <span id="msgFinal" class="width-fit-content">***</span>
-            </div>
-        </div>
+        <!-- 24/01 retira da pontuação na página do quiz -->
         <br><br>
         <div id="jogo" class="width-fit-content flex-colunar border-secondary">
 
@@ -239,7 +228,7 @@
                 idpergunta:idpergunta,
                 isCorreta:isCorreta,
                 //22/01
-                notaGeral:certas
+                notaGeral:pontuacaoFinal
             })
         }).then(function (resposta)
         {console.log(resposta)
@@ -393,36 +382,13 @@
         }
     }
 
-    function finalizarJogo() {
-        let textoParaMensagemFinal = null
-        let classComCoresParaMensagemFinal = null
-        const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
+    //24/11 retira da mensagem após pontuação na página do quiz
 
-        if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você está no fim do grid..."
-            classComCoresParaMensagemFinal = "text-danger-with-bg"
-        }
-        else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
-            classComCoresParaMensagemFinal = "text-warning-with-bg"
-        }
-        else if (porcentagemFinalDeAcertos >= 0.9) {
-            textoParaMensagemFinal = "Uau, parabéns você está na frente do grid!"
-            classComCoresParaMensagemFinal = "text-success-with-bg"
-        }
-        
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
-
-
-        document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
-        document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
-
-        document.getElementById('jogo').classList.add("text-new-gray") 
+   
 
         // btnProx.disabled = true
         // btnSubmeter.disabled = true
         // btnTentarNovamente.disabled = false
         // btnConcluir.disabled = false
-    }
+    
 </script>
