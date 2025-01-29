@@ -1,18 +1,8 @@
-var express = require("express");
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const rankingController = require('../controllers/rankingController');
 
-
-
-var rankingController = require("../controllers/rankingController");
-
-
-router.post("/ranking", function (req, res) {
-    rankingController.ranking(req, res);
-});
-
-router.get("/ranking", function (req, res) {
-    rankingController.ranking(req, res);
-});
-
+// Rota para o ranking
+router.get('/ranking', rankingController.ranking);
 
 module.exports = router;

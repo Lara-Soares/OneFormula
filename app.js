@@ -15,11 +15,13 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
+// 29/01
+var rankingRouter = require("./src/routes/ranking");
+
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var respostaRouter = require("./src/routes/resposta");
-//22/01
-var rankingRouter = require("./src/routes/ranking");
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,8 +32,8 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/resposta", respostaRouter);
-//22/01
-app.use ("/ranking", rankingRouter);
+//29/01
+app.use('/ranking', rankingRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

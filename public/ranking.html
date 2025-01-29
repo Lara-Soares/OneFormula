@@ -20,12 +20,11 @@
 </head>
 
 
-
 <body onload="ranking()">
 
     <div class="janela">
         <div class="header-left">
-            <!--adicionando logo no menu lateral 30/12--> 
+            <!--adicionando logo no menu lateral 30/12-->
             <img src="./fotos/logo__3_-removebg-preview2.png">
             <h1>OneFormula</h1>
 
@@ -35,34 +34,34 @@
 
             <div class="btn-nav">
                 <a href="./quiz.html">
-                <h3>Quiz</h3>
+                    <h3>Quiz</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
                 <a href="./dashboard.html">
-                <h3>Dashboard</h3>
-            </a>
+                    <h3>Dashboard</h3>
+                </a>
             </div>
 
             <div class="btn-nav">
                 <a href="./eu.html">
-                <h3>Sobre mim</h3>
-            </a>
+                    <h3>Sobre mim</h3>
+                </a>
             </div>
 
             <!--22/01-->
             <div class="btn-nav">
                 <a href="./ranking.html">
-                <h3>Ranking</h3>
-            </a>
+                    <h3>Ranking</h3>
+                </a>
             </div>
 
 
-            <div class="btn-nav" >
+            <div class="btn-nav">
                 <a href="./index.html">
-                <h3>Sair</h3>
-            </a>
+                    <h3>Sair</h3>
+                </a>
             </div>
 
         </div>
@@ -73,34 +72,88 @@
 
                 <div class="kpi">
                     <h2>
-                        
+
                     </h2>
                     <h3 id="kpirespostas"></h3>
                 </div>
 
-            <div class="kpi">
-                <h2>
-                    
-                </h2>
-                <h3 id="kpiacertos"></h3>
+                <div class="kpi">
+                    <h2>
 
+                    </h2>
+                    <h3 id="kpiacertos"></h3>
+
+                </div>
+
+                <div class="kpi">
+                    <h2>
+
+                    </h2>
+                    <h3 id="kpierros"></h3>
+
+                </div>
             </div>
 
-            <div class="kpi">
-                <h2>
-                    
-                </h2>
-                <h3 id="kpierros"></h3>
-
+            <div class="background-chart">
+                <div style="color: black; font-size: xx-large;" id="div_ranking">
+                </div>
             </div>
-        </div>
-
-        <div class="background-chart">
-            <div class="chart">
-                <canvas id="myChart">
-
-                </canvas>
-            </div>
-        </div>
         </div>
     </div>
+
+</body>
+
+</html>
+<script>
+
+    var idUsuario = sessionStorage.ID_USUARIO
+    var posicao = 0
+    var mensagem = ""
+    var mensagem2 = ""
+
+
+    function ranking() {
+
+
+        fetch(`/ranking/ranking`, {
+            method: "GET" //route resposta
+        }).then((res) => {
+            res.json().then((json) => {
+                console.log(json)
+               
+                    for (let i = 0; i < json.length; i++) {
+                        var nomeAtual = (json[i].nome)
+                        var pontosAtuais = (json[i].pontos)
+
+                        if (json[i].pontos != null) {
+
+                        if(i == 0){
+                            mensagem += ` <img src="../fotos/ouro.png"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
+                        } else if ( i == 1) {
+                            mensagem += ` <img src="../fotos/prata.png"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
+                        } else if (i == 2){
+                            mensagem += ` <img src="../fotos/bronze.png"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
+                        } else {
+                            mensagem += `${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
+                        } }
+                    }
+                       
+                    for (let i = 0; i < json.length; i++) {
+                        if (json[i].idusuario == idUsuario){
+                            posicao = (i + 1)
+
+                            if (json[i].pontos != null) {
+                            mensagem2 = `Sua posição: ${posicao}º lugar!`
+                            } else {
+                            mensagem2 = `Faça o quiz para entrar no ranking!`
+                            }
+
+                            div_ranking.innerHTML = `${mensagem} <br> <br> ${mensagem2}`
+                        }
+                    }
+                })
+            })
+
+    };
+
+</script>
