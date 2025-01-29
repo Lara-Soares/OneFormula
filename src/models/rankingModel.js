@@ -1,8 +1,8 @@
 var database = require("../database/config");
 
 function ranking() {
-    const instrucaoSql = `SELECT fk_usuario, notaGeral FROM pergunta ORDER BY notaGeral DESC;`;
+    const instrucaoSql = `SELECT idusuario, nome, pontos FROM usuario ORDER BY pontos DESC;`;
     return database.executar(instrucaoSql);
 }
 
-module.exports = { ranking };
+module.exports={ranking}
