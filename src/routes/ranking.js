@@ -8,5 +8,7 @@ router.get("/ranking", function (req, res) {
     rankingController.ranking(req, res);
 });
 
+
+
 module.exports = router;
 

@@ -21,8 +21,21 @@ function cadastrar(req,res){
         idusuario = req.params.idusuario
         respostaModel.listarDesempenho(idusuario).then((resultado )=> {res.status(200).json(resultado)}
     )}
+// 29/01
+    function cadastrarPontos(req,res){
+        idusuario = req.body.idusuario
+        pontos = req.body.pontos
+        respostaModel.cadastrarPontos(idusuario, pontos).then((resultado )=> {res.status(200).json(resultado)}
+    )
+    .catch(function(erro){
+        console.log(erro);
+        console.log("\n Erro ao cadastrar pontos! Erro", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+    });}
 
 module.exports = {
     cadastrar,
-    listarDesempenho
+    listarDesempenho,
+    cadastrarPontos
+    
 }
