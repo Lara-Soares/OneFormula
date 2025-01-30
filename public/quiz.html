@@ -35,24 +35,22 @@
   
   
     <!-- quiz -->
+
+    
   
     <body>
       <div id="pontuacaoEJogo" class="pontuacaoEJogo">
         <div class="quiz">
+            <div class="container-quiz">  <!--23/01 criação de nova class para as perguntas ficarem com o gif-->
           <button onclick="iniciarQuiz()" id="btnIniciarQuiz">INICIAR QUIZ</button>
-          </div>
+         
           <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-              <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                  <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                  <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-              </div>
-              <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
                   <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
                       <span id="spanPontuacaoFinal">***</span>
                   </span>
                   <span id="msgFinal" class="width-fit-content">***</span>
-              </div>
-          </div>
+            </div>
+     </div>
           <br><br>
           <div id="jogo" class="width-fit-content flex-colunar border-secondary">
   
@@ -88,16 +86,16 @@
                   </span>
               </div>
   
-              <div id="botoes" class="flex-colunar padding-8">
+              <div id="botoes" class="flex-colunar">
                   <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
                   <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
                   <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
                   <button onclick="cadastrarResposta()" id="btnConcluir" disabled>Finalizar Quiz</button> 
   
-              </div>
-  
+              </div>     
           </div>
-      </div>
+        </div>
+    </div>
       <!-- footer -->
   <div class="footer">
       <div class="container">
@@ -379,7 +377,7 @@
                   pontuacaoFinal++
                   certas++
                   eCorreta.push('1')
-                  document.getElementById("spanCertas").innerHTML = certas
+             
                   numeroDaQuestaoAtual++
   
               } else if (option.checked && option.value !== respostaQuestaoAtual) {
@@ -390,7 +388,7 @@
                   tentativaIncorreta++
                   erradas++
                   eCorreta.push('0')
-                  document.getElementById("spanErradas").innerHTML = erradas
+              
                   numeroDaQuestaoAtual++
               }
           })
@@ -414,22 +412,7 @@
       function finalizarJogo() {
           let textoParaMensagemFinal = null
           let classComCoresParaMensagemFinal = null
-          const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
-  
-          if (porcentagemFinalDeAcertos <= 0.3) {
-              textoParaMensagemFinal = "Parece que você está no fim do grid..."
-              classComCoresParaMensagemFinal = "text-danger-with-bg"
-          }
-          else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-              textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
-              classComCoresParaMensagemFinal = "text-warning-with-bg"
-          }
-          else if (porcentagemFinalDeAcertos >= 0.9) {
-              textoParaMensagemFinal = "Uau, parabéns você está na frente do grid!"
-              classComCoresParaMensagemFinal = "text-success-with-bg"
-          }
           
-          textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
   
   
           document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
@@ -438,7 +421,7 @@
   
           document.getElementById('jogo').classList.add("text-new-gray") 
   
-      
+         //23/11 retirada da mensagem da pontuação na página do quiz
   
           // btnProx.disabled = true
           // btnSubmeter.disabled = true

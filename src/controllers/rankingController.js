@@ -1,5 +1,6 @@
-var rankingModel = require("../models/rankingModel");
+// controller criado para o ranking 29/01
 
+var rankingModel = require("../models/rankingModel");
 
 
 function ranking(req, res) {

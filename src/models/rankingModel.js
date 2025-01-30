@@ -1,3 +1,4 @@
+// model para o ranking feito no dia 29/01
 var database = require("../database/config");
 
 function ranking() {

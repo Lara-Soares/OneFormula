@@ -16,12 +16,12 @@ function cadastrar(req,res){
     });
 }
 
-//ajuste feito no dia 09/01
+//ajuste do idusuario feito no dia 09/01
     function listarDesempenho(req,res){
         idusuario = req.params.idusuario
         respostaModel.listarDesempenho(idusuario).then((resultado )=> {res.status(200).json(resultado)}
     )}
-// 29/01
+// function para o ranking 29/01
     function cadastrarPontos(req,res){
         idusuario = req.body.idusuario
         pontos = req.body.pontos

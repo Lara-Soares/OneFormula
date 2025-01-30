@@ -500,11 +500,12 @@ a:hover{
 
 /* QUIZ */
 .container-quiz {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
    
   }
   
@@ -529,12 +530,10 @@ a:hover{
     border-radius: 10px;
     cursor: pointer;
     width: 30%;
-     
     
   }
   
   .flex-colunar {
-    display: flex;
     background-color: rgba(229, 229, 229, 0.5); /* fundo  com transparência */
     border-radius: 10px;
     align-items: center;
@@ -542,12 +541,10 @@ a:hover{
     text-align: center;
     margin-top: 5px;
     left: 50%;
-    width: 40%;
     max-width: 400px; 
     padding: 20px;
     flex-direction: column;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
-    width: 100%; 
     margin-bottom: 10px;
     
   }
@@ -560,7 +557,7 @@ a:hover{
 }
 
 .padding-8 {
-    padding: 8px;
+    padding: 5px;
 
 }
 /* acertou */

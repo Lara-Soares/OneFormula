@@ -13,7 +13,7 @@ router.post("/cadastrar", function (req, res) {
 router.get("/listarDesempenho/:idusuario", function (req,res){
     respostaController.listarDesempenho(req,res)
 })
-// 29/01
+// function para o ranking 29/01
 router.put("/cadastrarPontos", function (req, res) {
     respostaController.cadastrarPontos(req, res);
 })
