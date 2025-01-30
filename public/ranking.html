@@ -70,26 +70,14 @@
 
             <div class="kpicenter">
 
-                <div class="kpi">
-                    <h2>
-
-                    </h2>
-                    <h3 id="kpirespostas"></h3>
+                <div class="kpi-ranking">
+                    
+                    <h1 id="primeiro"></h1>
                 </div>
 
-                <div class="kpi">
-                    <h2>
-
-                    </h2>
-                    <h3 id="kpiacertos"></h3>
-
-                </div>
-
-                <div class="kpi">
-                    <h2>
-
-                    </h2>
-                    <h3 id="kpierros"></h3>
+                <div class="kpi-ranking">
+                   
+                    <h2 id="lugar"></h2>
 
                 </div>
             </div>
@@ -128,11 +116,12 @@
                         if (json[i].pontos != null) {
 
                         if(i == 0){
-                            mensagem += ` <img src="../fotos/ouro.png"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
+                            mensagem += ` <img src="./fotos/ouro.webp"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) </img><br>`
+                            primeiro.innerHTML = `${i + 1}º  ${nomeAtual}`
                         } else if ( i == 1) {
-                            mensagem += ` <img src="../fotos/prata.png"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
+                            mensagem += ` <img src="./fotos/prata.webp"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos)</img> <br>`
                         } else if (i == 2){
-                            mensagem += ` <img src="../fotos/bronze.png"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
+                            mensagem += ` <img src="./fotos/bronze.webp"  width="35px"> ${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
                         } else {
                             mensagem += `${i + 1}º  - ${nomeAtual} (${pontosAtuais} pontos) <br>`
                         } }
@@ -143,7 +132,7 @@
                             posicao = (i + 1)
 
                             if (json[i].pontos != null) {
-                            mensagem2 = `Sua posição: ${posicao}º lugar!`
+                            lugar.innerHTML = `Sua posição:<br> ${posicao}º lugar!`
                             } else {
                             mensagem2 = `Faça o quiz para entrar no ranking!`
                             }

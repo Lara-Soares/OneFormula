@@ -205,6 +205,34 @@ canvas {
 	justify-content:center;
   text-align: center;
 }
+
+/* kpi ranking 30/01 */
+.kpi-ranking{
+  background-color: #A20000;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 30px;
+  margin-left: 200px;
+	width: 150px;
+  height: 130px;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+  text-align: center;
+
+  
+}
+/* kpi ranking 30/01 */
+.kpi-ranking h1{
+  color:white
+}
+
+.kpi-ranking h2{
+  color:white;
+  text-align: center;
+}
+
+
 /* 22/01 */
 .kpi h2{
   color: white;
