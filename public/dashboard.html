@@ -89,15 +89,27 @@
 
             </div>
         </div>
-
-        <div class="background-chart">
+        <!--  class adicionada para ter os graficos um ao lado do outro 31/01 -->
+<div class="graficos">
+        <div class="background-chart"><h4>Resultado de<br> todas as partidas:<br></h4>
             <div class="chart">
                 <canvas id="myChart">
 
                 </canvas>
             </div>
         </div>
+
+        <div class="background-chart"><h4>Resultado do<br> maior acerto e <br>do menor acerto<br> dos usuários<br></h4>
+            <div class="chart">
+            <canvas id="maxMinChart">
+
+            </canvas>
+             </div>
         </div>
+
+        </div>
+        </div>
+    </div>
     </div>
 
 
@@ -146,8 +158,8 @@
             labels: ["Acertos", "Erros"],
             data: [erros, acertos],
             backgroundColor: [
-              'rgb(47,79,79)',
-              'rgb(139,0,0)',],
+              'rgb(139,0,0)',
+              'rgb(47,79,79)',],
               hoverOffset: 4
           }],
         },
@@ -155,4 +167,58 @@
     })
   })
 }
+
+// 30/11
+function listarMaxMin() {
+    fetch(`/resposta/listarMaxMin`, {
+        method: "GET"
+    }).then((res) => {
+        res.json().then((json) => {
+            console.log(json);
+
+            var maxPontos = json[0].maxPontos;
+            var minPontos = json[0].minPontos;
+
+            // Renderiza o gráfico de barras
+            const ctx = document.getElementById("maxMinChart");
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: ["Máximo", "Mínimo"],
+                    datasets: [{
+                        label: "Pontuação",
+                        data: [maxPontos, minPontos],
+                        backgroundColor: [
+                            'rgb(139,0,0)',
+                            'rgb(47,79,79)'
+                        ],
+                        borderColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(75, 192, 192)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    }).catch((erro) => {
+        console.error('Erro na requisição:', erro);
+    });
+}
+
+// Chama a função para carregar o gráfico
+// listarDesempenho();
+// listarMaxMin();
+
+window.onload = function () {
+    listarDesempenho();
+    listarMaxMin();
+};
 </script>

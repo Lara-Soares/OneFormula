@@ -252,11 +252,28 @@ canvas {
 	border-radius: 10px;
 	padding: 40px;
 	margin: 50px;
-  margin-left: 220px;
-	width: 45%;
+  margin-left: 30px;
+	width: 50%;
 	display: flex;
 	justify-content:center;
   align-items: center;
+}
+
+.background-ranking {
+  background-color: white;
+	border-radius: 10px;
+	padding: 40px;
+	margin: 50px;
+  margin-left: 2  '00px;
+	width: 50%;
+	display: flex;
+	justify-content:center;
+  align-items: center;
+}
+/* class adicionada para ter os graficos um ao lado do outro31/01 */
+.graficos{
+  flex-direction: row;
+  display: flex;
 }
 
 .chart{

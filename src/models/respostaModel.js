@@ -37,12 +37,26 @@ GROUP BY
 ORDER BY qtdAcertos DESC`;
 return database.executar(instrucaoSql);
  }
+
 // function para o ranking 29/01
  function cadastrarPontos(idusuario, pontos){
     var instrucaoSql = 
-    `UPDATE usuario SET pontos = ${pontos} where idusuario = ${idusuario}`;
+    `UPDATE usuario 
+    SET pontos = ${pontos}
+    where idusuario = ${idusuario}`;
 ;
 console.log("Executando a instrução SQL: \n" + instrucaoSql);
 return database.executar(instrucaoSql);
 }
-module.exports={cadastrar, listarDesempenho, cadastrarPontos}
+
+// 30/01
+function listarMaxMin() {
+    var instrucaoSql = `
+        SELECT
+            MAX(pontos) AS maxPontos,
+            MIN(pontos) AS minPontos
+        FROM usuario;
+    `;
+    return database.executar(instrucaoSql);
+}
+module.exports={cadastrar, listarDesempenho, cadastrarPontos, listarMaxMin}
